@@ -10,7 +10,7 @@ function addToZero(arr) {
 }
 console.log(addToZero([1, 2, 3, -2]));
 console.log(addToZero([1]));
-// BigO notation  O(n^2)
+// BigO notation  O(n^2) this is a for loop in a for loop so it is n to the second power, not scaling very well.
 
 function hasUniqueChars(word) {
   const sortedWord = word.split("").sort();
@@ -23,7 +23,9 @@ function hasUniqueChars(word) {
 
   return true;
 }
-// BigO notation  O(n log n)
+console.log(hasUniqueChars("Monday"));
+console.log(hasUniqueChars("Moonday"));
+// BigO notation after doing a lot of research online i believe this to be a O(n log n) this is due to the .sort method.
 
 function isPangram(sentence) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -40,7 +42,9 @@ function isPangram(sentence) {
 
   return false;
 }
-// BigO notation  O(n)
+console.log(isPangram("The quick brown fox jumps over the lazy dog!"));
+console.log(isPangram("I like cats, but not mice"));
+// BigO notation  O(n) there is only one for of loop in this function. it does look though the array of the alphabet but since it is only 26 letters it should not impact the time to a large degree.
 
 function findLongestWord(words) {
   let maxLength = 0;
@@ -53,4 +57,5 @@ function findLongestWord(words) {
 
   return maxLength;
 }
-// BigO notation  O(n)
+console.log(findLongestWord(["hi", "hello"]));
+// BigO notation  O(n) there is only 1 for of loop in this function
