@@ -1,0 +1,20 @@
+Results for the extraLargeArray
+insert 800.2376 ms
+append 2.5911 ms
+Results for largeArray
+append 113.2 μs
+insert 6.0839 ms
+Results for mediumArray
+append 16.6 μs
+insert 85.1 μs
+Results for smallArray
+append 5.5 μs
+insert 8.3 μs
+Results for tinyArray
+append 4.5 μs
+insert 28.5 μs
+
+Both functions scale with increasing array size, but doublerInsert scales significantly worse than doublerAppend. The time of doublerInsert grows exponentially with array size, while doublerAppend's time grows linearly with array size. In short doublerInsert scales worse because it takes increasingly longer time to complete as the size of the array increases.
+
+
+The reason why doublerInsert is so slow is because it uses the unshift() method to insert the doubled number at the beginning of the array. This method requires shifting all existing elements over to make room for the new element, which becomes more cumbersome as the size of the array grows. Where as doublerAppend adds elements to the end of the array, which with time grows linearly and does not require shifting all existing elements.
